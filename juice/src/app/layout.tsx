@@ -5,6 +5,11 @@ import { repositoryName } from "@/prismicio";
 
 
 import "./app.css"
+import Header from '@/components/Header';
+
+
+
+
 const alpino = localFont({
   src: '../../public/fonts/Alpino-Variable.woff2',
   weight :"100 900",
@@ -19,7 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={alpino.variable}>
-      <body>{children}</body>
+      <body>
+        <Header/>
+        <main>
+        {children}
+        </main>
+          
+        
+        </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
