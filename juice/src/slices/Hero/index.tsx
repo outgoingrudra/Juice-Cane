@@ -3,6 +3,9 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
+
+import { Bounded } from "@/components/Bounded";
+
 /**
  * Props for `Hero`.
  */
@@ -13,7 +16,8 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
   return (
-    <section
+
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -26,7 +30,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       <PrismicNextImage field={slice.primary.cans_image} />
       <PrismicRichText field={slice.primary.second_heading} />
       <PrismicRichText field={slice.primary.second_body} />
-    </section>
+    </Bounded>
   );
 };
 
