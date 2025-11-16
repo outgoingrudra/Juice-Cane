@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Page documents
@@ -202,6 +202,36 @@ export interface HeroSliceDefaultPrimary {
     prismic.FieldState,
     never
   >;
+
+  /**
+   * Cans Image field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.cans_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  cans_image: prismic.ImageField<never>;
+
+  /**
+   * Second heading field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.second_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  second_heading: prismic.RichTextField;
+
+  /**
+   * Second body field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.second_body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  second_body: prismic.RichTextField;
 }
 
 /**
