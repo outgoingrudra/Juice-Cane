@@ -2,7 +2,55 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Climate"
+						}
+					}
+				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa ut tempor non laboris commodo do sit laborum sit amet dolor et sunt adipisicing mollit. Ullamco proident tempor aliqua qui consequat aute exercitation incididunt dolor ea reprehenderit reprehenderit fugiat. Elit velit Lorem duis ex laboris ipsum sint sit."
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod labore qui excepteur irure esse."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "fruit",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"key": "3013d959-02a0-4a53-b4be-759154e7e8c4",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "depend"
+				}
+			}
+		},
 		"items": []
 	}
 ]
