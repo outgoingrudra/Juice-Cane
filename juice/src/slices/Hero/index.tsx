@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `Hero`.
@@ -16,13 +17,15 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for hero (variation: {slice.variation}) slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use the Prismic MCP server with your code editor
-       * 📚 Docs: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
+      <PrismicRichText field={slice.primary.heading} />
+      <PrismicRichText field={slice.primary.subheading} />
+      <PrismicRichText field={slice.primary.body} />
+      <PrismicNextLink field={slice.primary.button_link} >
+          {slice.primary.button_text}
+      </PrismicNextLink>
+      <PrismicNextImage field={slice.primary.cans_image} />
+      <PrismicRichText field={slice.primary.second_heading} />
+      <PrismicRichText field={slice.primary.second_body} />
     </section>
   );
 };
