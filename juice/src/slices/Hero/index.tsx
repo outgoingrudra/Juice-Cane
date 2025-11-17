@@ -3,7 +3,6 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
-
 import { Bounded } from "@/components/Bounded";
 
 /**
@@ -16,20 +15,29 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
   return (
-
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText field={slice.primary.heading} />
-      <PrismicRichText field={slice.primary.subheading} />
-      <PrismicRichText field={slice.primary.body} />
-      <PrismicNextLink field={slice.primary.button_link} >
-          {slice.primary.button_text}
-      </PrismicNextLink>
-      <PrismicNextImage field={slice.primary.cans_image} />
-      <PrismicRichText field={slice.primary.second_heading} />
-      <PrismicRichText field={slice.primary.second_body} />
+      <div className="grid">
+        <div className="grid h-screen place-items-center">
+          <div className="grid auto-rows-min place-items-center  text-center ">
+
+         <h1 className="hero-header text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem] lg:text-[13rem]">  <PrismicRichText field={slice.primary.heading} /></h1>
+          <PrismicRichText field={slice.primary.subheading} />
+
+          <PrismicRichText field={slice.primary.body} />
+          <PrismicNextLink field={slice.primary.button_link}>
+            {slice.primary.button_text}
+          </PrismicNextLink>
+          </div>
+        </div>
+        <div className="grid text-side relative z-[80] h-screen items-center gap-4 md:grid-cols-2">
+          <PrismicNextImage field={slice.primary.cans_image} />
+          <PrismicRichText field={slice.primary.second_heading} />
+          <PrismicRichText field={slice.primary.second_body} />
+        </div>
+      </div>
     </Bounded>
   );
 };
