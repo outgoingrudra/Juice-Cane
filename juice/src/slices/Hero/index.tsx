@@ -27,9 +27,14 @@ const Hero: FC<HeroProps> = ({ slice }) => {
   useGSAP(()=>{
      const introT1 = gsap.timeline()
 
-     introT1.from(".hero-header-word",{
+     introT1
+     .set(".hero",{opacity:1})
+     .from(".hero-header-word",{
       scale : 3,
-      opacity : 0
+      opacity : 0,
+      ease : "power4.in",
+      delay : 0.3 ,
+      stagger:1
      })
   })
 
@@ -39,7 +44,8 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="hero"
+      className="hero opacity-0"
+      
     >
       <div className="grid">
         <div className="grid h-screen place-items-center">
