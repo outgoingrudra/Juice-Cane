@@ -36,6 +36,19 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       delay : 0.3 ,
       stagger:1
      })
+     .from(".hero-subheading",{
+      opacity : 0,
+      y : 30,
+     },"+=.8")
+     .from(".hero-body",{
+      opacity: 0 ,
+      y : 10,
+     })
+     .from(".hero-button",{
+      opacity: 0 ,
+      y : 10,
+      duration : 0.6
+     })
   })
 
 
